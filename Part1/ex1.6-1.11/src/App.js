@@ -49,16 +49,16 @@ const CustomButton = (props) => {
 	//Man's not hot
 const StitistacsHandler = (props) => {
 
-	const getTotalNumber = (props) =>{
-		return props.Good + props.Neutral + props.Bad
+	const getTotalNumber = (counterObject) =>{
+		return counterObject.Good + counterObject.Neutral + counterObject.Bad
 	}
 
-	const getAverage = (props) =>{
-		return  (getTotalNumber(props.counter)===0)? 0 : (props.counter.Good + (props.counter.Bad * -1)) / getTotalNumber(props.counter)
+	const getAverage = (counterObject) =>{
+		return  (getTotalNumber(counterObject.counter)===0)? 0 : (counterObject.counter.Good + (counterObject.counter.Bad * -1)) / getTotalNumber(counterObject.counter)
 	}
 
-	const getPositivePercentage = (props) =>{
-		return (getTotalNumber(props.counter)===0)? 0 : (props.counter.Good * 100 ) / getTotalNumber(props.counter)
+	const getPositivePercentage = (counterObject) =>{
+		return (getTotalNumber(counterObject.counter)===0)? 0 : (counterObject.counter.Good * 100 ) / getTotalNumber(counterObject.counter)
 	}
 
 	if (getTotalNumber(props.counter)===0){
